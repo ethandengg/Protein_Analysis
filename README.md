@@ -75,7 +75,7 @@ recipes_nona
 Here we take a look at the distribution of how many grams of protein is in the recipes, the distribution average ratings, and the distribution of cooking time all on their own bar charts.
 
 
-<iframe src="assets/smaller_distributions.html" width=1000 height=1200 frameBorder=0></iframe>
+<iframe src="assets/smaller_distributions.html" width=8000 height=1000 frameBorder=0></iframe>
 
 ```python
 titles = ['Protein Distribution', 'Average Rating Distribution', 'Average Time Distribution (Minutes)']
