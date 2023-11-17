@@ -104,25 +104,33 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 | 3-4            | 25.2867 | 33.1707 |  36.7743 | 42.1723 |
 | 4-5            | 22.7715 | 31.8557 |  34.2425 | 39.7874 |
 
-```python
+# NMAR Analysis
+### We understand that “Not Missing at Random” (NMAR) indicates that there is a relationship between the propensity of a value to be missing and its value. We think that the missingness in the average_rating is potentially NMAR. We believe that the missingness in average_rating has to do with the length of the recipe. The longer a recipe is and the longer it takes to finish the recipe, it is potentially less likely for the recipe to be made, causing the recipe to have fewer ratings or even missing ratings. Furthermore, we believe that it is more likely for recipes that are either really good or really bad to receive ratings. It is possible that the missing ratings are due to the fact that people did not feel anything special about the recipe. Due to the fact that there may exist a cause-and-effect relationship to these missing values, NMAR would therefore be a valid indication. 
 
-```
+# Missingness dependency
+### We wanted to test if there is a correlation between the missingness in average_rating in comparison to the minutes (the minutes it takes to cook a certain recipe). The average_rating values are likely to be missing because there were no reviews for these recipes. One of the reasons is that we did a left merge with recipes and reviews to get the average rating column, where recipes are on the left, so recipes that had no reviews left for them were calculated to be NaN. Based on what we can see below in the plot, as well as our permutation test, there appears to be a correlation between the cooking time and the missingness of the average_rating column. 
 
-```python
+[insert graph here]
 
-```
 
-```python
+### Seeing that the p-value is below 0.05, this means that there is a correlation between the cooking time and the missingness of the average_rating column. This makes sense because recipes that take a long time to cook are less likely to be made and therefore won't have a rating left for them. This means that the data is NMAR because the missingness of a rating is dependent on the cooking time for the recipe.
 
-```
 
-```python
+## Test for correlation between protein content and average rating:
+### Null Hypothesis (H0): There is no correlation between protein content and average rating.
+### Alternative Hypothesis (Ha): There is a correlation between protein content and average rating.
+Observed Pearson correlation: 0.18592457955173802
+P-value from the permutation test: 0.0
 
-```
 
-```python
+## Test for correlation between protein content and cooking time:
+### Null Hypothesis (H0): There is no correlation between protein content and cooking time.
+### Alternative Hypothesis (Ha): There is a correlation between protein content and cooking time.
+Observed Pearson correlation: -0.02273678966808098
+P-value from the permutation test: 0.0
 
-```
+### Given the results above, it seems as though there is a very weak NEGATIVE coorelation between the amount of protein in food and the rating of the food. Moreover, there is also a very weak POSITIVE coorelation between the amount of protein and the minutes to prepare the food.
+
 
 ```python
 
