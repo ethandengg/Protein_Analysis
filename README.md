@@ -71,10 +71,11 @@ recipes_nona
 
 # Univariate Analysis
 
-<iframe src="assets/file-name.html" width=800 height=600 frameBorder=0></iframe>
+
 Here we take a look at the distribution of how many grams of protein is in the recipes, the distribution average ratings, and the distribution of cooking time all on their own bar charts.
 
 ```python
+<iframe src="assets/file-name.html" width=800 height=600 frameBorder=0></iframe>
 titles = ['Protein Distribution', 'Average Rating Distribution', 'Average Time Distribution (Minutes)']
 
 # Variables to plot
