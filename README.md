@@ -21,9 +21,9 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 |     'submitted' |      User ID who submitted this recipe |
 | 'tags' |      Food.com tags for recipe |
 |     'nutrition' |      Nutrition information in this form [calries (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
-|     'n_steps' |      Number of steps in recipe |
-|    'steps' |      Text for recipe steps, in order |
-|     'description' |      User-provided description |
+|     'n_steps' |      Number of steps in the recipe |
+|    'steps' |      Step by step instructions to follow |
+|     'description' |      A description of what the recipe makes |
 
 ### This is a description of what the reviews dataframe contains (731927 rows):
 
@@ -47,7 +47,7 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 
 ### 5. There were some recipes that had no average rating (or an average rating of 0, which are invalid) and some recipes that didn't have a description, so we got rid of those rows and saved it to a new dataframe called recipes_nona to better examine the data that we do have. There were about 2600 rows with NA values, so this didn't impact the size of our data frame that much.
 
-## Here is what our recipes data frame now looks like with no 'NA' values, and some columns have been removed for an easier viewing experience on the important variables.
+## Here is what our recipes data frame now looks like with no 'NA' values, and some columns have been removed for an easier viewing experience on the variables of interest.
 
 
 | name                                 |     id |   minutes |   contributor_id | submitted   | nutrition                                     |   average_rating |   protein |
