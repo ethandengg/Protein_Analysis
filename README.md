@@ -115,7 +115,7 @@ We wanted to test if there is a correlation between the missingness in average_r
 
 The observed statistic here was 117.34 and the p-value was 0.0369. Seeing that the p-value is below 0.05, this means that there is a correlation between the cooking time and the missingness of the average_rating column. This makes sense because recipes that take a long time to cook are less likely to be made and therefore won't have a rating left for them. This means that the data is NMAR because the missingness of a rating is dependent on the cooking time for the recipe. Therefore the missingness of average rating is dependent on the cooking time.
 
-<iframe src="assets/permutation_test_protein.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/permutation_protein.html" width=800 height=600 frameBorder=0></iframe>
 
 The observed statistic here was 1.29 and the p-value was 0.1936. For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. The negative values simply indicate that in that permutation, the group with missing ratings had a lower mean protein level than the group with ratings. This conclusion sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating. Therefore the missingness of average rating is NOT dependent on the amount of protein.
 
@@ -125,12 +125,15 @@ The observed statistic here was 1.29 and the p-value was 0.1936. For this chart 
 Observed Pearson correlation: 0.18592457955173802
 P-value from the permutation test: 0.0
 
+<iframe src="assets/hypothesis_protein.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Test for correlation between protein content and cooking time:
 #### Null Hypothesis (H0): There is no correlation between protein content and cooking time.
 #### Alternative Hypothesis (Ha): There is a correlation between protein content and cooking time.
 Observed Pearson correlation: -0.02273678966808098
 P-value from the permutation test: 0.0
+
+<iframe src="assets/hypothesis_minutes.html" width=800 height=600 frameBorder=0></iframe>
 
 Given the results above, it seems as though there is a very weak NEGATIVE coorelation between the amount of protein in food and the rating of the food. Moreover, there is also a very weak POSITIVE coorelation between the amount of protein and the minutes to prepare the food.
 
