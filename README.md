@@ -167,3 +167,9 @@ From the plot above, we can see that our p-value of 0 from the test that is less
 ## Conclusion:
 Given the tests conducted above and the results generated above, we conclude that our observed data in the merged ‘recipe_nona’ ’dataset indicates that there is a very weak **negative** correlation between the amount of protein in food and the rating of the food. Moreover, there is also a very weak **positive** correlation between the amount of protein and the minutes to prepare the food. Therefore, we reject that there is a correlation between the protein content of a recipe and the average rating of a recipe; we also reject that there is a correlation between the protein content of a recipe and the cooking time of a recipe.
 
+## Rquirements
+- Python 3.8+
+- NumPy
+- pandas
+- plotly
+
