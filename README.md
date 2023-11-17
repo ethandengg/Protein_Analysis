@@ -119,25 +119,39 @@ The observed statistic here was 117.34 and the p-value was 0.0369. Seeing that t
 
 The observed statistic here was 1.29 and the p-value was 0.1936. For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. The negative values simply indicate that in that permutation, the group with missing ratings had a lower mean protein level than the group with ratings. This conclusion sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating. Therefore the missingness of average rating is NOT dependent on the amount of protein.
 
-## Test for correlation between protein content and average rating:
-#### Null Hypothesis (H0): There is no correlation between protein content and average rating.
-#### Alternative Hypothesis (Ha): There is a correlation between protein content and average rating.
-Observed Pearson correlation: 0.18592457955173802
-P-value from the permutation test: 0.0
 
+## Hypothesis Testing
+### Permutation Test for correlation between protein content and average rating:
+
+In order to credibly answer our research question, where we are testing whether there exists a correlation between the rating of a recipe and the protein content of a recipe, we must test for a correlation between protein content and average rating using permutation testing:
+**Null Hypothesis (H0)**: There is no correlation between the protein content of a recipe and the average rating of a recipe.
+**Alternative Hypothesis (Ha)**:  There is a correlation between the protein content of a recipe and the average rating of a recipe.
+**Test Statistics**: For the purpose of finding the correlation between the average rating of a recipe and its protein content, we would simply utilize our merged data frame ‘recipe_nona’ to have already categorized columns as our testing variables. The specific columns we focused upon from ‘recipe_nona’ are the ‘protein’ column and the ‘average_rating’ column. Therefore, since we are trying to determine a linear correlation between two variables within the same data set, we utilized <u> Pearson correlation coefficient</u>  as our test statistics.
+**Significance Level**: To ensure the accuracy of our findings and conclusions on our research question, we chose to use a significance level of 5% for this permutation test.
+
+The plot below showcases the coorelation from permutation testing of our test statics in 10000 permutations
 <iframe src="assets/hypothesis_protein.html" width=800 height=600 frameBorder=0></iframe>
 
-## Test for correlation between protein content and cooking time:
-#### Null Hypothesis (H0): There is no correlation between protein content and cooking time.
-#### Alternative Hypothesis (Ha): There is a correlation between protein content and cooking time.
 Observed Pearson correlation: -0.02273678966808098
 P-value from the permutation test: 0.0
+From the plot above, we can see that our p-value of 0 from the test that is less than our significance level of 0.05. Hence, we reject our null hypothesis.
+## Permutation Test for correlation between protein content and cooking time:
+In order to credibly answer our research question, where we are testing whether there exists a correlation between the cooking time of a recipe and the protein content of a recipe, we must test for a correlation between protein content and cooking time using permutation testing:
+**Null Hypothesis (H0)**: There is no correlation between the protein content of a recipe and the cooking time of a recipe.
+**Alternative Hypothesis (Ha)**: There is a correlation between the protein content of a recipe and the cooking time of a recipe.
 
+**Test Statistics**: For the purpose of finding the correlation between the cooking time of a recipe and its protein content, we would simply utilize our merged data frame ‘recipe_nona’ to have already categorized columns as our testing variables. The specific columns we focused upon from ‘recipe_nona’ are the ‘protein’ column and the ‘minutes’ column. Therefore, since we are trying to determine a linear correlation between two variables within the same data set, we utilized <u> Pearson correlation coefficient</u>  as our test statistics.
+**Significance Level**: To ensure the accuracy of our findings and conclusions on our research question, we chose to use a significance level of 5% for this permutation test.
+
+The plot below showcases the coorelation from permutation testing of our test statics in 10000 permutations
 <iframe src="assets/hypothesis_minutes.html" width=800 height=600 frameBorder=0></iframe>
 
-Given the results above, it seems as though there is a very weak NEGATIVE coorelation between the amount of protein in food and the rating of the food. Moreover, there is also a very weak POSITIVE coorelation between the amount of protein and the minutes to prepare the food.
+
+Observed Pearson correlation: 0.18592457955173802
+P-value from the permutation test: 0.0
+From the plot above, we can see that our p-value of 0 from the test that is less than our significance level of 0.05. Hence, we reject our null hypothesis.
 
 
-```python
+## Conclusion:
+Given the tests conducted above and the results generated above, we conclude that our observed data in the merged ‘recipe_nona’ ’dataset indicates that there is a very weak **negative** correlation between the amount of protein in food and the rating of the food. Moreover, there is also a very weak **positive** correlation between the amount of protein and the minutes to prepare the food. Therefore, we reject that there is a correlation between the protein content of a recipe and the average rating of a recipe; we also reject that there is a correlation between the protein content of a recipe and the cooking time of a recipe.
 
-```
