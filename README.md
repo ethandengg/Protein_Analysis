@@ -31,6 +31,8 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 reviews = pd.read_csv('food_data/RAW_interactions.csv')
 reviews
 ```
+df['review'] = df['review'].str.slice(0, 50)  # Adjust the number 50 as needed
+print(df.head(10).to_markdown(index=False))
 
 ```python
 recipes = pd.read_csv('food_data/RAW_recipes.csv')
