@@ -5,8 +5,20 @@
 ## Project Overview
 This is a data science project on investigating if there is a coorelation between the protein content and average rating and if there is a coorelation between the protein content and cooking time of the recipe. The dataset used to investigate the topic can be find [here](https://dsc80.com/project3/recipes-and-ratings/food.com), and is originally scrapped from [this source](https://cseweb.ucsd.edu/~jmcauley/pdfs/emnlp19c.pdf).
 
+# Table of Contents
+- [Introduction](#introduction)
+- [Data Cleaning](#datacleaning)
+- [Univariate Analysis](#univariateanalysis)
+- [Bivariate Analysis](#bivariateanalysis)
+- [Interesting Aggregates](#interestingaggregates)
+- [NMAR Analysis](#nmaranalysis)
+- [Missingness Dependency](#missingnessdependency)
+- [Hypothesis Testing](#hypothesistesting)
+- [Conclusion](#conclusion)
 
-# Introduction:
+
+
+# Introduction: <a name="introduction"></a>
 Recently there have been more bodybuilding and strength influencers on the rise, leading to an increase in gym culture and people striving to improve their physique. With this in mind, it's important to eat high-protein foods to build muscle after a hard workout, so in our project, we're curious to find out if recipes that are high in protein are also the ones that people seem to like more. We're also interested in seeing if the time it takes to cook these protein-rich meals affects how much people enjoy them. After all, we all want delicious food that's also good for our muscles, but if it takes too long to make, we might not be that keen on cooking it.
 
 The dataset we are working with is from food.com and contains recipes and reviews that have been collected since 2008. This dataset is divided into two data frames, recipes and ratings. We are mainly interested in the recipes data frame, where we will be looking at the nutrition and cooking time. However, we will merge the two data frames to get the average ratings for each recipe and use that for our analysis.
