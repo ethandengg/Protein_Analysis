@@ -1,6 +1,6 @@
 # Recipes and Ratings EDA - Is there a coorelation between the amount of protein in a recipe and the Average Rating or Cooking Time
 
-By: Ethan Deng, Jason Gu
+**Authors**: Ethan Deng, Jason Gu
 
 # Introduction:
 Recently there have been more bodybuilding and strength influencers on the rise, leading to an increase in gym culture and people striving to improve their physique. With this in mind, it's important to eat high-protein foods to build muscle after a hard workout, so in our project, we're curious to find out if recipes that are high in protein are also the ones that people seem to like more. We're also interested in seeing if the time it takes to cook these protein-rich meals affects how much people enjoy them. After all, we all want delicious food that's also good for our muscles, but if it takes too long to make, we might not be that keen on cooking it.
@@ -37,17 +37,17 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 
 # Data Cleaning
 
-### 1. We merged the two data frames on the 'recipe_id' column from 'reviews' and the 'id' column from 'recipes' to assign each rating from the reviews data frame onto each recipe.
+1. We merged the two data frames on the 'recipe_id' column from 'reviews' and the 'id' column from 'recipes' to assign each rating from the reviews data frame onto each recipe.
 
-### 2. We grouped by the 'recipe_id's and took the mean of the ratings for all reviews on each recipe to get an average rating for each recipe.
+2. We grouped by the 'recipe_id's and took the mean of the ratings for all reviews on each recipe to get an average rating for each recipe.
 
-### 3. We assigned this series of average ratings onto a new column in the recipes data frame.
+3. We assigned this series of average ratings onto a new column in the recipes data frame.
 
-### 4. We also had to convert the nutrition column from a string into a list. This then makes it possible to extract the grams of protein from that column and add a new column called 'protein' to easily identify how much protein is in each recipe.
+4. We also had to convert the nutrition column from a string into a list. This then makes it possible to extract the grams of protein from that column and add a new column called 'protein' to easily identify how much protein is in each recipe.
 
-### 5. There were some recipes that had no average rating (or an average rating of 0, which are invalid) and some recipes that didn't have a description, so we got rid of those rows and saved it to a new dataframe called recipes_nona to better examine the data that we do have. There were about 2600 rows with NA values, but thankfully this didn't impact the size of our data frame that much.
+5. There were some recipes that had no average rating (or an average rating of 0, which are invalid) and some recipes that didn't have a description, so we got rid of those rows and saved it to a new dataframe called recipes_nona to better examine the data that we do have. There were about 2600 rows with NA values, but thankfully this didn't impact the size of our data frame that much.
 
-## Here is what our recipes data frame now looks like with no 'NA' values, and some columns have been removed for an easier viewing experience on the variables of interest.
+### Here is what our recipes data frame now looks like with no 'NA' values, and some columns have been removed for an easier viewing experience on the variables of interest.
 
 
 | name                                 |     id |   minutes |   contributor_id | submitted   | nutrition                                     |   average_rating |   protein |
@@ -60,32 +60,31 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 
 # Univariate Analysis
 
-## Here we take a look at the distribution of how many grams of protein is in the recipes, the distribution average ratings, and the distribution of cooking time all on their own bar charts.
+### Here we take a look at the distribution of how many grams of protein is in the recipes, the distribution average ratings, and the distribution of cooking time all on their own bar charts.
 
 
 <iframe src="assets/smaller_distributions.html" width=800 height=1000 frameBorder=0></iframe>
 
-### Here above we had to remove some outliers in the protein and time columns because there were some recipes with ridiculously unreal amounts of protein and time taken, which were clearly not real recipes. We excluded the outliers by only including values within 2 standard deviations within the mean. But as we can see, most recipes have a fairly low amount of protein and take about 30-50 minutes to prepare, and as the amount of protein in a recipe increases, they appear less frequently.
-
-### Also we can see that most recipe ratings are a 4 and above
+Here above we had to remove some outliers in the protein and time columns because there were some recipes with ridiculously unreal amounts of protein and time taken, which were clearly not real recipes. We excluded the outliers by only including values within 2 standard deviations within the mean. But as we can see, most recipes have a fairly low amount of protein and take about 30-50 minutes to prepare, and as the amount of protein in a recipe increases, they appear less frequently.
+Also we can see that most recipe ratings are a 4 and above
 
 
 # Bivariate Analysis
 
-## Here we look at two scatter plots to see the relationship between protein and average ratings among the recipes. As well as protein and cooking time.
+### Here we look at two scatter plots to see the relationship between protein and average ratings among the recipes. As well as protein and cooking time.
 
 <iframe src="assets/protein_vs_cooking_time.html" width=800 height=600 frameBorder=0></iframe>
 
-### When looking at the scatter plot of Protein vs Average Rating, there isn't much of a relationship between the two variables, but we can see that most recipes have a high average rating and low protein, as most of the dots are clumped into the top left
+When looking at the scatter plot of Protein vs Average Rating, there isn't much of a relationship between the two variables, but we can see that most recipes have a high average rating and low protein, as most of the dots are clumped into the top left
 
 <iframe src="assets/protein_vs_average_rating.html" width=800 height=600 frameBorder=0></iframe>
 
-### When looking at the scatter plot of Protein vs Average Rating, there also isn't much of a relationship, but it is clear that most recipes have a shorter cooking time and lower protein.
+When looking at the scatter plot of Protein vs Average Rating, there also isn't much of a relationship, but it is clear that most recipes have a shorter cooking time and lower protein.
 
 
 # Interesting Aggregates
 
-## Here we are aggregating the recipes by average rating, and seeing how the amount of protein and cooking time vary among each rating group.
+### Here we are aggregating the recipes by average rating, and seeing how the amount of protein and cooking time vary among each rating group.
 
 
 | ('rating_group', '')   |   ('protein', 'mean') |   ('protein', 'median') |   ('protein', 'std') |   ('minutes', 'mean') |   ('minutes', 'median') |   ('minutes', 'std') |
@@ -105,31 +104,31 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 | 4-5            | 22.7715 | 31.8557 |  34.2425 | 39.7874 |
 
 # NMAR Analysis
-### We understand that “Not Missing at Random” (NMAR) indicates that there is a relationship between the propensity of a value to be missing and its value. We think that the missingness in the average_rating is potentially NMAR. We believe that the missingness in average_rating has to do with the length of the recipe. The longer a recipe is and the longer it takes to finish the recipe, it is potentially less likely for the recipe to be made, causing the recipe to have fewer ratings or even missing ratings. Furthermore, we believe that it is more likely for recipes that are either really good or really bad to receive ratings. It is possible that the missing ratings are due to the fact that people did not feel anything special about the recipe. Due to the fact that there may exist a cause-and-effect relationship to these missing values, NMAR would therefore be a valid indication. 
+We understand that “Not Missing at Random” (NMAR) indicates that there is a relationship between the propensity of a value to be missing and its value. We think that the missingness in the average_rating is potentially NMAR. We believe that the missingness in average_rating has to do with the length of the recipe. The longer a recipe is and the longer it takes to finish the recipe, it is potentially less likely for the recipe to be made, causing the recipe to have fewer ratings or even missing ratings. Furthermore, we believe that it is more likely for recipes that are either really good or really bad to receive ratings. It is possible that the missing ratings are due to the fact that people did not feel anything special about the recipe. Due to the fact that there may exist a cause-and-effect relationship to these missing values, NMAR would therefore be a valid indication. 
 
 # Missingness dependency
-### We wanted to test if there is a correlation between the missingness in average_rating in comparison to the minutes (the minutes it takes to cook a certain recipe). The average_rating values are likely to be missing because there were no reviews for these recipes. One of the reasons is that we did a left merge with recipes and reviews to get the average rating column, where recipes are on the left, so recipes that had no reviews left for them were calculated to be NaN. Based on what we can see below in the plot, as well as our permutation test, there appears to be a correlation between the cooking time and the missingness of the average_rating column. 
+We wanted to test if there is a correlation between the missingness in average_rating in comparison to the minutes (the minutes it takes to cook a certain recipe). The average_rating values are likely to be missing because there were no reviews for these recipes. One of the reasons is that we did a left merge with recipes and reviews to get the average rating column, where recipes are on the left, so recipes that had no reviews left for them were calculated to be NaN. Based on what we can see below in the plot, as well as our permutation test, there appears to be a correlation between the cooking time and the missingness of the average_rating column. 
 
 [insert graph here]
 
 
-### Seeing that the p-value is below 0.05, this means that there is a correlation between the cooking time and the missingness of the average_rating column. This makes sense because recipes that take a long time to cook are less likely to be made and therefore won't have a rating left for them. This means that the data is NMAR because the missingness of a rating is dependent on the cooking time for the recipe.
+Seeing that the p-value is below 0.05, this means that there is a correlation between the cooking time and the missingness of the average_rating column. This makes sense because recipes that take a long time to cook are less likely to be made and therefore won't have a rating left for them. This means that the data is NMAR because the missingness of a rating is dependent on the cooking time for the recipe.
 
 
 ## Test for correlation between protein content and average rating:
-### Null Hypothesis (H0): There is no correlation between protein content and average rating.
-### Alternative Hypothesis (Ha): There is a correlation between protein content and average rating.
+#### Null Hypothesis (H0): There is no correlation between protein content and average rating.
+#### Alternative Hypothesis (Ha): There is a correlation between protein content and average rating.
 Observed Pearson correlation: 0.18592457955173802
 P-value from the permutation test: 0.0
 
 
 ## Test for correlation between protein content and cooking time:
-### Null Hypothesis (H0): There is no correlation between protein content and cooking time.
-### Alternative Hypothesis (Ha): There is a correlation between protein content and cooking time.
+#### Null Hypothesis (H0): There is no correlation between protein content and cooking time.
+#### Alternative Hypothesis (Ha): There is a correlation between protein content and cooking time.
 Observed Pearson correlation: -0.02273678966808098
 P-value from the permutation test: 0.0
 
-### Given the results above, it seems as though there is a very weak NEGATIVE coorelation between the amount of protein in food and the rating of the food. Moreover, there is also a very weak POSITIVE coorelation between the amount of protein and the minutes to prepare the food.
+Given the results above, it seems as though there is a very weak NEGATIVE coorelation between the amount of protein in food and the rating of the food. Moreover, there is also a very weak POSITIVE coorelation between the amount of protein and the minutes to prepare the food.
 
 
 ```python
