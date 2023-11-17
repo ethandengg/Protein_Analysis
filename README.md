@@ -94,7 +94,7 @@ When looking at the scatter plot of Protein vs Average Rating, there also isn't 
 | 3-4                    |               31.0934 |                      20 |              29.7814 |               58.9369 |                      35 |              78.132  |
 | 4-5                    |               28.6202 |                      17 |              29.3303 |               54.5229 |                      35 |              70.8765 |
 
-
+Here we can get a better look at how protein and cooking time vary between the ratings groups. From this table, there seems to be little to no differences for protein among the rating groups, as they fluctuate minimally. However, it is pretty clear that the recipes in the 4-5 rating group have a mean, meadian, and standard deviation of cooking time. This makes sense because most people would rather not spend a longer time cooking if they don't have to.
 
 | rating_group   |    0-30 |   30-60 |   60-120 |    120+ |
 |:---------------|--------:|--------:|---------:|--------:|
@@ -102,6 +102,8 @@ When looking at the scatter plot of Protein vs Average Rating, there also isn't 
 | 2-3            | 24.2185 | 32.2783 |  33.6454 | 46.0409 |
 | 3-4            | 25.2867 | 33.1707 |  36.7743 | 42.1723 |
 | 4-5            | 22.7715 | 31.8557 |  34.2425 | 39.7874 |
+
+In this table, we can see that as the cooking time increases for the recipe, the protein also increases. This makes sense because typically a longer cooking time means a bigger portion of food being prepared. However, within the cooking times, it seems that foods with a 2-3 or 3-4 rating have a little more protein than ratings between 1-2 and 4-5. What we can deduce from this is that protein may be slightly less favorable for most people.
 
 # NMAR Analysis
 We understand that “Not Missing at Random” (NMAR) indicates that there is a relationship between the propensity of a value to be missing and its value. We think that the missingness in the average_rating is potentially NMAR. We believe that the missingness in average_rating has to do with the length of the recipe. The longer a recipe is and the longer it takes to finish the recipe, it is potentially less likely for the recipe to be made, causing the recipe to have fewer ratings or even missing ratings. Furthermore, we believe that it is more likely for recipes that are either really good or really bad to receive ratings. It is possible that the missing ratings are due to the fact that people did not feel anything special about the recipe. Due to the fact that there may exist a cause-and-effect relationship to these missing values, NMAR would therefore be a valid indication. 
