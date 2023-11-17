@@ -120,8 +120,8 @@ The observed statistic here was 117.34 and the p-value was 0.0369. Seeing that t
 The observed statistic here was 1.29 and the p-value was 0.1936. For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. The negative values simply indicate that in that permutation, the group with missing ratings had a lower mean protein level than the group with ratings. This conclusion sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating. Therefore the missingness of average rating is NOT dependent on the amount of protein.
 
 
-## Hypothesis Testing
-### Permutation Test for correlation between protein content and average rating:
+# Hypothesis Testing
+## Permutation Test for correlation between protein content and average rating:
 
 In order to credibly answer our research question, where we are testing whether there exists a correlation between the rating of a recipe and the protein content of a recipe, we must test for a correlation between protein content and average rating using permutation testing:
 
