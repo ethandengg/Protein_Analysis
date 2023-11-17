@@ -56,8 +56,6 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 | 412 broccoli casserole                  | 306168 |        40 |            50969 | 2008-05-30  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]      |         6 |               9 |                5 |        22 |
 | millionaire pound cake                  | 286009 |       120 |           461724 | 2008-02-12  | ['time-to-make', 'course', 'cuisine', 'preparation | [878.3, 63.0, 326.0, 13.0, 20.0, 123.0, 39.0]  |         7 |               7 |                5 |        20 |
 | 2000 meatloaf                           | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to-make', 'course', 'main-ingredient', 'pre | [267.0, 30.0, 12.0, 12.0, 29.0, 48.0, 2.0]     |        17 |              13 |                5 |        29 |
-| 5 tacos                                 | 500166 |        20 |          2549237 | 2013-05-13  | ['weeknight', '30-minutes-or-less', 'time-to-make' | [249.4, 26.0, 4.0, 6.0, 39.0, 39.0, 0.0]       |         5 |               9 |                4 |        39 |
-
 
 # Univariate Analysis
 
