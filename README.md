@@ -128,6 +128,7 @@ plt.show()  # Display the histograms
 Here we look at two scatter plots to see the relationship between protein and average ratings among the recipes. As well as protein and cooking time.
 <iframe src="assets/protein_vs_cooking_time.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/protein_vs_average_rating.html" width=800 height=600 frameBorder=0></iframe>
+
 ```python
 
 # Calculate the 99th percentile for the 'minutes' column
