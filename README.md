@@ -106,16 +106,18 @@ Here we can get a better look at how protein and cooking time vary between the r
 In this table, we can see that as the cooking time increases for the recipe, the protein also increases. This makes sense because typically a longer cooking time means a bigger portion of food being prepared. However, within the cooking times, it seems that foods with a 2-3 or 3-4 rating have a little more protein than ratings between 1-2 and 4-5. What we can deduce from this is that protein may be slightly less favorable for most people.
 
 # NMAR Analysis
-We understand that “Not Missing at Random” (NMAR) indicates that there is a relationship between the propensity of a value to be missing and its value. We think that the missingness in the average_rating is potentially NMAR. We believe that the missingness in average_rating has to do with the length of the recipe. The longer a recipe is and the longer it takes to finish the recipe, it is potentially less likely for the recipe to be made, causing the recipe to have fewer ratings or even missing ratings. Furthermore, we believe that it is more likely for recipes that are either really good or really bad to receive ratings. It is possible that the missing ratings are due to the fact that people did not feel anything special about the recipe. Due to the fact that there may exist a cause-and-effect relationship to these missing values, NMAR would therefore be a valid indication. 
+We understand that “Not Missing at Random” (NMAR) indicates that there is a relationship between the propensity of a value to be missing and its value. We think that the missingness in the average_rating is potentially NMAR. We believe that the missingness in average_rating has to do with the length of the recipe. The longer it takes to finish the recipe, it is potentially less likely for the recipe to be made, causing the recipe to have fewer ratings or even missing ratings. Furthermore, we believe that it is more likely for recipes that are either really good or really bad to receive ratings. It is possible that the missing ratings are due to the fact that people did not feel anything special about the recipe. Due to the fact that there may exist a cause-and-effect relationship to these missing values, NMAR would therefore be a valid indication. 
 
 # Missingness dependency
 We wanted to test if there is a correlation between the missingness in average_rating in comparison to the minutes (the minutes it takes to cook a certain recipe). The average_rating values are likely to be missing because there were no reviews for these recipes. One of the reasons is that we did a left merge with recipes and reviews to get the average rating column, where recipes are on the left, so recipes that had no reviews left for them were calculated to be NaN. Based on what we can see below in the plot, as well as our permutation test, there appears to be a correlation between the cooking time and the missingness of the average_rating column. 
 
-[insert graph here]
-
+<iframe src="assets/permutation_minutes.html" width=800 height=600 frameBorder=0></iframe>
 
 Seeing that the p-value is below 0.05, this means that there is a correlation between the cooking time and the missingness of the average_rating column. This makes sense because recipes that take a long time to cook are less likely to be made and therefore won't have a rating left for them. This means that the data is NMAR because the missingness of a rating is dependent on the cooking time for the recipe.
 
+<iframe src="assets/permutation_protein.html" width=800 height=600 frameBorder=0></iframe>
+
+For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. This makes sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating.
 
 ## Test for correlation between protein content and average rating:
 #### Null Hypothesis (H0): There is no correlation between protein content and average rating.
