@@ -57,10 +57,7 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 | millionaire pound cake                  | 286009 |       120 |           461724 | 2008-02-12  | ['time-to-make', 'course', 'cuisine', 'preparation | [878.3, 63.0, 326.0, 13.0, 20.0, 123.0, 39.0]  |         7 |               7 |                5 |        20 |
 | 2000 meatloaf                           | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to-make', 'course', 'main-ingredient', 'pre | [267.0, 30.0, 12.0, 12.0, 29.0, 48.0, 2.0]     |        17 |              13 |                5 |        29 |
 | 5 tacos                                 | 500166 |        20 |          2549237 | 2013-05-13  | ['weeknight', '30-minutes-or-less', 'time-to-make' | [249.4, 26.0, 4.0, 6.0, 39.0, 39.0, 0.0]       |         5 |               9 |                4 |        39 |
-| 50 chili   for the crockpot             | 501028 |       345 |          2628680 | 2013-05-28  | ['course', 'main-ingredient', 'cuisine', 'preparat | [270.2, 19.0, 26.0, 48.0, 52.0, 21.0, 4.0]     |         4 |              22 |                5 |        52 |
-| blepandekager   danish   apple pancakes | 503475 |        50 |           128473 | 2013-07-08  | ['danish', '60-minutes-or-less', 'time-to-make', ' | [358.2, 30.0, 62.0, 14.0, 19.0, 54.0, 12.0]    |        10 |              10 |                5 |        19 |
-| lplermagrone                            | 522861 |        50 |           135470 | 2015-07-25  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [1003.8, 72.0, 21.0, 103.0, 69.0, 143.0, 37.0] |        10 |               8 |                5 |        69 |
-| lplermagrone  herdsman s macaroni       | 457136 |        40 |            65502 | 2011-05-23  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [708.6, 52.0, 19.0, 24.0, 46.0, 104.0, 25.0]   |        14 |              10 |                5 |        46 |
+
 
 # Univariate Analysis
 
