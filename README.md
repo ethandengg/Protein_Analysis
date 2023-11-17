@@ -26,6 +26,7 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 |     'description' |      User-provided description |
 
 ### This is a description of what the reviews dataframe contains (731927 rows):
+
 |    Column  |  Desciption |
 |-----------:|------------:|
 |    'user_id' |       User ID |
