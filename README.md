@@ -113,11 +113,11 @@ We wanted to test if there is a correlation between the missingness in average_r
 
 <iframe src="assets/permutation_minutes.html" width=800 height=600 frameBorder=0></iframe>
 
-Seeing that the p-value is below 0.05, this means that there is a correlation between the cooking time and the missingness of the average_rating column. This makes sense because recipes that take a long time to cook are less likely to be made and therefore won't have a rating left for them. This means that the data is NMAR because the missingness of a rating is dependent on the cooking time for the recipe. Therefore the missingness of average rating is dependent on the cooking time.
+The observed statistic here was 117.34 and the p-value was 0.0361. Seeing that the p-value is below 0.05, this means that there is a correlation between the cooking time and the missingness of the average_rating column. This makes sense because recipes that take a long time to cook are less likely to be made and therefore won't have a rating left for them. This means that the data is NMAR because the missingness of a rating is dependent on the cooking time for the recipe. Therefore the missingness of average rating is dependent on the cooking time.
 
 <iframe src="assets/permutation_protein.html" width=800 height=600 frameBorder=0></iframe>
 
-For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. The negative values simply indicate that in that permutation, the group with missing ratings had a lower mean protein level than the group with ratings. This conclusion sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating. Therefore the missingness of average rating is NOT dependent on the amount of protein.
+The observed statistic here was 1.29 and the p-value was 0.1945. For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. The negative values simply indicate that in that permutation, the group with missing ratings had a lower mean protein level than the group with ratings. This conclusion sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating. Therefore the missingness of average rating is NOT dependent on the amount of protein.
 
 ## Test for correlation between protein content and average rating:
 #### Null Hypothesis (H0): There is no correlation between protein content and average rating.
