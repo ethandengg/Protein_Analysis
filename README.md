@@ -52,6 +52,8 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 ### 5. There were some recipes that had no average rating (or an average rating of 0, which are invalid) and some recipes that didn't have a description, so we got rid of those rows and saved it to a new dataframe called recipes_nona to better examine the data that we do have. There were about 2600 rows with NA values, so this didn't impact the size of our data frame that much.
 
 ## Here is what our recipes data frame now looks like with no 'NA' values, and some columns have been removed for an easier viewing experience on the important variables.
+
+
 | name                                    |     id |   minutes |   contributor_id | submitted   | tags                                               | nutrition                                      |   n_steps |   n_ingredients |   average_rating |   protein |
 |:----------------------------------------|-------:|----------:|-----------------:|:------------|:---------------------------------------------------|:-----------------------------------------------|----------:|----------------:|-----------------:|----------:|
 | 1 brownies in the world    best ever    | 333281 |        40 |           985201 | 2008-10-27  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0]       |        10 |               9 |                4 |         3 |
