@@ -11,32 +11,28 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 
 
 
-### This is how the recipes and reviews dataframe look:
+### This is a description of what the recipes dataframe contains (83782 rows):
 
 |    Column  |  Desciption |
 |-----------:|------------:|
 |    'name' |       Recipe name |
-|     'id |       Recipe ID |
+|     'id' |       Recipe ID |
 |      'minutes' |       Minutes to prepare recipe |
 |     'submitted' |      User ID who submitted this recipe |
 | 'tags' |      Food.com tags for recipe |
 |     'nutrition' |      Nutrition information in this form [calries (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
 |     'n_steps' |      Number of steps in recipe |
-|    'steps |      Text for recipe steps, in order |
-|     'description |      User-provided description |
+|    'steps' |      Text for recipe steps, in order |
+|     'description' |      User-provided description |
 
-| name                                    |     id |   minutes |   contributor_id | submitted   | tags                                               |
-|:----------------------------------------|-------:|----------:|-----------------:|:------------|:---------------------------------------------------|
-| 1 brownies in the world    best ever    | 333281 |        40 |           985201 | 2008-10-27  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
-| 1 in canada chocolate chip cookies      | 453467 |        45 |          1848091 | 2011-04-11  | ['60-minutes-or-less', 'time-to-make', 'cuisine',  |
-| 412 broccoli casserole                  | 306168 |        40 |            50969 | 2008-05-30  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
-| millionaire pound cake                  | 286009 |       120 |           461724 | 2008-02-12  | ['time-to-make', 'course', 'cuisine', 'preparation |
-| 2000 meatloaf                           | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to-make', 'course', 'main-ingredient', 'pre |
-| 5 tacos                                 | 500166 |        20 |          2549237 | 2013-05-13  | ['weeknight', '30-minutes-or-less', 'time-to-make' |
-| 50 chili   for the crockpot             | 501028 |       345 |          2628680 | 2013-05-28  | ['course', 'main-ingredient', 'cuisine', 'preparat |
-| blepandekager   danish   apple pancakes | 503475 |        50 |           128473 | 2013-07-08  | ['danish', '60-minutes-or-less', 'time-to-make', ' |
-| lplermagrone                            | 522861 |        50 |           135470 | 2015-07-25  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
-| lplermagrone  herdsman s macaroni       | 457136 |        40 |            65502 | 2011-05-23  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
+### This is a description of what the reviews dataframe contains (731927 rows):
+|    Column  |  Desciption |
+|-----------:|------------:|
+|    'user_id' |       User ID |
+|     'recipe_id' |       Recipe ID |
+|      'date' |       Date of interaction|
+|     'rating' |      Rating (1-5) |
+| 'review' |      Review text |
 
 # Data Cleaning
 
