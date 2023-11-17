@@ -117,7 +117,7 @@ Seeing that the p-value is below 0.05, this means that there is a correlation be
 
 <iframe src="assets/permutation_protein.html" width=800 height=600 frameBorder=0></iframe>
 
-For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. This makes sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating.
+For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. The negative values simply indicate that in that permutation, the group with missing ratings had a lower mean protein level than the group with ratings.  This conclusion sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating.
 
 ## Test for correlation between protein content and average rating:
 #### Null Hypothesis (H0): There is no correlation between protein content and average rating.
