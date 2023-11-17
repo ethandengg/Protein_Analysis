@@ -75,7 +75,7 @@ recipes_nona
 Here we take a look at the distribution of how many grams of protein is in the recipes, the distribution average ratings, and the distribution of cooking time all on their own bar charts.
 
 
-<iframe src="assets/smaller_distributions.html" width=8000 height=1000 frameBorder=0></iframe>
+<iframe src="assets/smaller_distributions.html" width=800 height=1000 frameBorder=0></iframe>
 
 ```python
 titles = ['Protein Distribution', 'Average Rating Distribution', 'Average Time Distribution (Minutes)']
@@ -126,7 +126,8 @@ plt.show()  # Display the histograms
 
 
 Here we look at two scatter plots to see the relationship between protein and average ratings among the recipes. As well as protein and cooking time.
-
+<iframe src="assets/protein_vs_cooking_time.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/protein_vs_average_rating.html" width=800 height=600 frameBorder=0></iframe>
 ```python
 
 # Calculate the 99th percentile for the 'minutes' column
