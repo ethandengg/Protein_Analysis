@@ -60,8 +60,7 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 
 # Univariate Analysis
 
-
-Here we take a look at the distribution of how many grams of protein is in the recipes, the distribution average ratings, and the distribution of cooking time all on their own bar charts.
+## Here we take a look at the distribution of how many grams of protein is in the recipes, the distribution average ratings, and the distribution of cooking time all on their own bar charts.
 
 
 <iframe src="assets/smaller_distributions.html" width=800 height=1000 frameBorder=0></iframe>
@@ -73,8 +72,7 @@ Here we take a look at the distribution of how many grams of protein is in the r
 
 # Bivariate Analysis
 
-
-Here we look at two scatter plots to see the relationship between protein and average ratings among the recipes. As well as protein and cooking time.
+## Here we look at two scatter plots to see the relationship between protein and average ratings among the recipes. As well as protein and cooking time.
 
 <iframe src="assets/protein_vs_cooking_time.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -87,8 +85,7 @@ Here we look at two scatter plots to see the relationship between protein and av
 
 # Interesting Aggregates
 
-
-Here we are aggregating the recipes by average rating, and seeing how the amount of protein and cooking time vary among each rating group.
+## Here we are aggregating the recipes by average rating, and seeing how the amount of protein and cooking time vary among each rating group.
 
 
 | ('rating_group', '')   |   ('protein', 'mean') |   ('protein', 'median') |   ('protein', 'std') |   ('minutes', 'mean') |   ('minutes', 'median') |   ('minutes', 'std') |
