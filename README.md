@@ -1,4 +1,4 @@
-# Recipes and Ratings EDA - Is there a coorelation between the amount of protein in a recipe and the Average Rating or Cooking Time
+# Recipes and Ratings EDA
 
 **Authors**: Ethan Deng, Jason Gu
 
