@@ -51,7 +51,7 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 |     'rating' |      Rating (1-5) |
 | 'review' |      Review text |
 
-# Data Cleaning
+# Data Cleaning <a name="datacleaning"></a>
 
 1. We merged the two data frames on the 'recipe_id' column from 'reviews' and the 'id' column from 'recipes' to assign each rating from the reviews data frame onto each recipe.
 
@@ -74,7 +74,7 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 | millionaire pound cake               | 286009 |       120 |           461724 | 2008-02-12  | [878.3, 63.0, 326.0, 13.0, 20.0, 123.0, 39.0] |                5 |        20 |
 | 2000 meatloaf                        | 475785 |        90 |          2202916 | 2012-03-06  | [267.0, 30.0, 12.0, 12.0, 29.0, 48.0, 2.0]    |                5 |        29 |
 
-# Univariate Analysis
+# Univariate Analysis <a name="univariateanalysis"></a>
 
 ### Here we take a look at the distribution of how many grams of protein is in the recipes, the distribution average ratings, and the distribution of cooking time all on their own bar charts.
 
@@ -85,7 +85,7 @@ Here above we had to remove some outliers in the protein and time columns becaus
 Also we can see that most recipe ratings are a 4 and above
 
 
-# Bivariate Analysis
+# Bivariate Analysis <a name="bivariateanalysis"></a>
 
 ### Here we look at two scatter plots to see the relationship between protein and average ratings among the recipes. As well as protein and cooking time.
 
@@ -98,7 +98,7 @@ When looking at the scatter plot of Protein vs Average Rating, there isn't much 
 When looking at the scatter plot of Protein vs Average Rating, there also isn't much of a relationship, but it is clear that most recipes have a shorter cooking time and lower protein.
 
 
-# Interesting Aggregates
+# Interesting Aggregates <a name="interestingaggregates"></a>
 
 ### Here we are aggregating the recipes by average rating, and seeing how the amount of protein and cooking time vary among each rating group.
 
@@ -121,10 +121,10 @@ Here we can get a better look at how protein and cooking time vary between the r
 
 In this table, we can see that as the cooking time increases for the recipe, the protein also increases. This makes sense because typically a longer cooking time means a bigger portion of food being prepared. However, within the cooking times, it seems that foods with a 2-3 or 3-4 rating have a little more protein than ratings between 1-2 and 4-5. What we can deduce from this is that protein may be slightly less favorable for most people.
 
-# NMAR Analysis
+# NMAR Analysis <a name="nmaranalysis"></a>
 We understand that “Not Missing at Random” (NMAR) indicates that there is a relationship between the propensity of a value to be missing and its value. We think that the missingness in the average_rating is potentially NMAR. We believe that the missingness in average_rating has to do with the length of the recipe. The longer it takes to finish the recipe, it is potentially less likely for the recipe to be made, causing the recipe to have fewer ratings or even missing ratings. Furthermore, we believe that it is more likely for recipes that are either really good or really bad to receive ratings. It is possible that the missing ratings are due to the fact that people did not feel anything special about the recipe. Due to the fact that there may exist a cause-and-effect relationship to these missing values, NMAR would therefore be a valid indication. 
 
-# Missingness dependency
+# Missingness dependency <a name="missingnessdependency"></a>
 We wanted to test if there is a correlation between the missingness in average_rating in comparison to the minutes (the minutes it takes to cook a certain recipe). The average_rating values are likely to be missing because there were no reviews for these recipes. One of the reasons is that we did a left merge with recipes and reviews to get the average rating column, where recipes are on the left, so recipes that had no reviews left for them were calculated to be NaN. Based on what we can see below in the plot, as well as our permutation test, there appears to be a correlation between the cooking time and the missingness of the average_rating column. 
 
 <iframe src="assets/permutation_minutes.html" width=800 height=600 frameBorder=0></iframe>
@@ -136,7 +136,7 @@ The observed statistic here was 117.34 and the p-value was 0.0369. Seeing that t
 The observed statistic here was 1.29 and the p-value was 0.1936. For this chart we can see that the p-value is quite high (around 0.2), which means that the amount of protein a recipe has does not coorelate with whether or not there is a rating for the recipe. The negative values simply indicate that in that permutation, the group with missing ratings had a lower mean protein level than the group with ratings. This conclusion sense because whether or not a recipe has more or less protein shouldn't stop someone from giving the recipe a rating. Therefore the missingness of average rating is NOT dependent on the amount of protein.
 
 
-# Hypothesis Testing
+# Hypothesis Testing <a name="hypothesistesting"></a>
 ## Permutation Test for correlation between protein content and average rating:
 
 In order to credibly answer our research question, where we are testing whether there exists a correlation between the rating of a recipe and the protein content of a recipe, we must test for a correlation between protein content and average rating using permutation testing:
@@ -176,7 +176,7 @@ P-value from the permutation test: 0.0
 From the plot above, we can see that our p-value of 0 from the test that is less than our significance level of 0.05. Hence, we reject our null hypothesis.
 
 
-## Conclusion:
+## Conclusion: <a name="conclusion"></a>
 Given the tests conducted above and the results generated above, we conclude that our observed data in the merged ‘recipe_nona’ ’dataset indicates that there is a very weak **negative** correlation between the amount of protein in food and the rating of the food. Moreover, there is also a very weak **positive** correlation between the amount of protein and the minutes to prepare the food. Therefore, we reject that there is a correlation between the protein content of a recipe and the average rating of a recipe; we also reject that there is a correlation between the protein content of a recipe and the cooking time of a recipe.
 
 ## Rquirements
