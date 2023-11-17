@@ -36,6 +36,18 @@ reviews
 recipes = pd.read_csv('food_data/RAW_recipes.csv')
 recipes
 ```
+| name                                    |     id |   minutes |   contributor_id | submitted   | tags                                               |
+|:----------------------------------------|-------:|----------:|-----------------:|:------------|:---------------------------------------------------|
+| 1 brownies in the world    best ever    | 333281 |        40 |           985201 | 2008-10-27  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
+| 1 in canada chocolate chip cookies      | 453467 |        45 |          1848091 | 2011-04-11  | ['60-minutes-or-less', 'time-to-make', 'cuisine',  |
+| 412 broccoli casserole                  | 306168 |        40 |            50969 | 2008-05-30  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
+| millionaire pound cake                  | 286009 |       120 |           461724 | 2008-02-12  | ['time-to-make', 'course', 'cuisine', 'preparation |
+| 2000 meatloaf                           | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to-make', 'course', 'main-ingredient', 'pre |
+| 5 tacos                                 | 500166 |        20 |          2549237 | 2013-05-13  | ['weeknight', '30-minutes-or-less', 'time-to-make' |
+| 50 chili   for the crockpot             | 501028 |       345 |          2628680 | 2013-05-28  | ['course', 'main-ingredient', 'cuisine', 'preparat |
+| blepandekager   danish   apple pancakes | 503475 |        50 |           128473 | 2013-07-08  | ['danish', '60-minutes-or-less', 'time-to-make', ' |
+| lplermagrone                            | 522861 |        50 |           135470 | 2015-07-25  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
+| lplermagrone  herdsman s macaroni       | 457136 |        40 |            65502 | 2011-05-23  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
 
 # Data Cleaning
 
