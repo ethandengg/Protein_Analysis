@@ -45,7 +45,7 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 
 ### 4. We also had to convert the nutrition column from a string into a list. This then makes it possible to extract the grams of protein from that column and add a new column called 'protein' to easily identify how much protein is in each recipe.
 
-### 5. There were some recipes that had no average rating (or an average rating of 0, which are invalid) and some recipes that didn't have a description, so we got rid of those rows and saved it to a new dataframe called recipes_nona to better examine the data that we do have. There were about 2600 rows with NA values, so this didn't impact the size of our data frame that much.
+### 5. There were some recipes that had no average rating (or an average rating of 0, which are invalid) and some recipes that didn't have a description, so we got rid of those rows and saved it to a new dataframe called recipes_nona to better examine the data that we do have. There were about 2600 rows with NA values, but thankfully this didn't impact the size of our data frame that much.
 
 ## Here is what our recipes data frame now looks like with no 'NA' values, and some columns have been removed for an easier viewing experience on the variables of interest.
 
