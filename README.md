@@ -18,8 +18,19 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 reviews = pd.read_csv('food_data/RAW_interactions.csv')
 reviews
 ```
-df['review'] = df['review'].str.slice(0, 50)  # Adjust the number 50 as needed
-print(df.head(10).to_markdown(index=False))
+
+|    user_id |   recipe_id | date       |   rating | review                                             |
+|-----------:|------------:|:-----------|---------:|:---------------------------------------------------|
+|    1293707 |       40893 | 2011-12-21 |        5 | So simple, so delicious! Great for chilly fall eve |
+|     126440 |       85009 | 2010-02-27 |        5 | I made the Mexican topping and took it to bunko.   |
+|      57222 |       85009 | 2011-10-01 |        5 | Made the cheddar bacon topping, adding a sprinklin |
+|     124416 |      120345 | 2011-08-06 |        0 | Just an observation, so I will not rate.  I follow |
+| 2000192946 |      120345 | 2015-05-10 |        2 | This recipe was OVERLY too sweet.  I would start o |
+|     468945 |      134728 | 2008-02-20 |        0 | Made my own buttermilk w/ vinegar and milk.  Used  |
+|     255338 |      134728 | 2008-04-11 |        5 | First time using liquid smoke in a recipe. Made th |
+|    1171894 |      134728 | 2009-04-21 |        5 | MMMMM! This is so good! I actually soaked the chic |
+|     217118 |      200236 | 2008-04-18 |        5 | This was a lovely Morrocan style dish. I halved th |
+| 2000049093 |      200236 | 2015-03-08 |        5 | I love lamb stew and usually make an Irish version |
 
 ```python
 recipes = pd.read_csv('food_data/RAW_recipes.csv')
@@ -152,6 +163,8 @@ plt.show()
 
 
 Here we are aggregating the recipes by average rating, and seeing how the amount of protein and cooking time vary among each rating group.
+
+print(grouped[['protein', 'minutes']].head().to_markdown(index=False))
 
 ```python
 # Define the bin edges
