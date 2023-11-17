@@ -66,7 +66,7 @@ Here we take a look at the distribution of how many grams of protein is in the r
 
 <iframe src="assets/smaller_distributions.html" width=800 height=1000 frameBorder=0></iframe>
 
-### Here above we had to remove some outliers in the protein and time columns because there were some recipes with ridiculously unreal amounts of protein and time taken, which were clearly not real recipes. But as we can see, most recipes have a fairly low amount of protein and take about 30-50 minutes to prepare, and as the amount of protein in a recipe increases, they appear less frequently.
+### Here above we had to remove some outliers in the protein and time columns because there were some recipes with ridiculously unreal amounts of protein and time taken, which were clearly not real recipes. We excluded the outliers by only including values within 2 standard deviations within the mean. But as we can see, most recipes have a fairly low amount of protein and take about 30-50 minutes to prepare, and as the amount of protein in a recipe increases, they appear less frequently.
 
 ### Also we can see that most recipe ratings are a 4 and above
 
