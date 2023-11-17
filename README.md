@@ -14,11 +14,6 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 
 ### This is what the recipes and reviews dataframe looks:
 
-```python
-reviews = pd.read_csv('food_data/RAW_interactions.csv')
-reviews
-```
-
 |    user_id |   recipe_id | date       |   rating | review                                             |
 |-----------:|------------:|:-----------|---------:|:---------------------------------------------------|
 |    1293707 |       40893 | 2011-12-21 |        5 | So simple, so delicious! Great for chilly fall eve |
@@ -32,10 +27,6 @@ reviews
 |     217118 |      200236 | 2008-04-18 |        5 | This was a lovely Morrocan style dish. I halved th |
 | 2000049093 |      200236 | 2015-03-08 |        5 | I love lamb stew and usually make an Irish version |
 
-```python
-recipes = pd.read_csv('food_data/RAW_recipes.csv')
-recipes
-```
 | name                                    |     id |   minutes |   contributor_id | submitted   | tags                                               |
 |:----------------------------------------|-------:|----------:|-----------------:|:------------|:---------------------------------------------------|
 | 1 brownies in the world    best ever    | 333281 |        40 |           985201 | 2008-10-27  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
@@ -50,7 +41,6 @@ recipes
 | lplermagrone  herdsman s macaroni       | 457136 |        40 |            65502 | 2011-05-23  | ['60-minutes-or-less', 'time-to-make', 'course', ' |
 
 # Data Cleaning
-
 
 ### 1. We merged the two data frames on the 'recipe_id' column from 'reviews' and the 'id' column from 'recipes' to assign each rating from the reviews data frame onto each recipe.
 
@@ -89,46 +79,6 @@ Here we take a look at the distribution of how many grams of protein is in the r
 
 <iframe src="assets/smaller_distributions.html" width=800 height=1000 frameBorder=0></iframe>
 
-```python
-titles = ['Protein Distribution', 'Average Rating Distribution', 'Average Time Distribution (Minutes)']
-
-# Variables to plot
-variables = ['protein', 'average_rating', 'minutes']
-
-def remove_outliers(df, column, std_devs=2):
-    if column == 'average_rating':
-        std_devs=50
-        mean = df[column].mean()
-        std_dev = df[column].std()
-    elif column == 'minutes':
-        std_devs=0.1
-        mean = df[column].mean()
-        std_dev = df[column].std()
-    else:
-        mean = df[column].mean()
-        std_dev = df[column].std()
-    return df[(df[column] <= mean + std_devs * std_dev) & (df[column] >= mean - std_devs * std_dev)]
-
-for var in variables:
-    recipes_nona = remove_outliers(recipes_nona, var)
-```
-
-```python
-# Setting up the plotting area for histograms
-fig, axes = plt.subplots(3, 1, figsize=(12, 15)) 
-fig.subplots_adjust(hspace=0.3, wspace=0.3)
-
-# Plotting histograms after removing outliers
-for ax, var, title in zip(axes, variables, titles):
-    sns.histplot(recipes_nona[var], kde=True, ax=ax, bins=10)
-    ax.set_title(title)
-    ax.set_xlabel(var.capitalize())
-    ax.set_ylabel('Frequency')
-
-plt.tight_layout() 
-plt.show()  # Display the histograms
-```
-
 ### Here above we had to remove some outliers in the protein and time columns because there were some recipes with ridiculously unreal amounts of protein and time taken, which were clearly not real recipes. But as we can see, most recipes have a fairly low amount of protein and take about 30-50 minutes to prepare, and as the amount of protein in a recipe increases, they appear less frequently.
 
 ### Also we can see that most recipe ratings are a 4 and above
@@ -141,31 +91,6 @@ Here we look at two scatter plots to see the relationship between protein and av
 <iframe src="assets/protein_vs_cooking_time.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/protein_vs_average_rating.html" width=800 height=600 frameBorder=0></iframe>
 
-```python
-
-# Calculate the 99th percentile for the 'minutes' column
-percentile_99 = recipes_nona['minutes'].quantile(0.99)
-
-# Filter the DataFrame to exclude points above the 99th percentile
-filtered_recipes = recipes_nona[recipes_nona['minutes'] <= percentile_99]
-
-# Making scatter plots using the filtered data
-fig, axes = plt.subplots(2, 1, figsize=(15, 12))
-fig.subplots_adjust(hspace=0.3, wspace=0.3)
-
-# Nutrients vs Average Rating
-sns.scatterplot(data=filtered_recipes, x='protein', y='average_rating', ax=axes[0], color='blue')
-axes[0].set_title('Protein vs Average Rating')
-
-# Nutrients vs Cooking Time
-sns.scatterplot(data=filtered_recipes, x='protein', y='minutes', ax=axes[1], color='blue')
-axes[1].set_title('Protein vs Cooking Time')
-
-plt.tight_layout()
-plt.show()
-
-```
-
 ### When looking at the scatter plot of Protein vs Average Rating, there isn't much of a relationship between the two variables, but we can see that most recipes have a high average rating and low protein, as most of the dots are clumped into the top left
 
 ### When looking at the scatter plot of Protein vs Average Rating, there also isn't much of a relationship, but it is clear that most recipes have a shorter cooking time and lower protein.
@@ -176,25 +101,7 @@ plt.show()
 
 Here we are aggregating the recipes by average rating, and seeing how the amount of protein and cooking time vary among each rating group.
 
-print(grouped[['protein', 'minutes']].head().to_markdown(index=False))
 
-```python
-# Define the bin edges
-bin_edges = [1,2,3,4,5]
-bin_labels = [f'{bin_edges[i]}-{bin_edges[i+1]}' for i in range(len(bin_edges)-1)]
-
-# Bin the average ratings with the defined edges and labels
-recipes_nona['rating_group'] = pd.cut(recipes_nona['average_rating'], bins=bin_edges, labels=bin_labels, include_lowest=True)
-
-# Group by the new rating_group and calculate aggregates
-grouped = recipes_nona.groupby('rating_group').agg({
-    'protein': ['mean', 'median', 'std'],
-    'minutes': ['mean', 'median', 'std']
-})
-
-grouped
-
-```
 | ('rating_group', '')   |   ('protein', 'mean') |   ('protein', 'median') |   ('protein', 'std') |   ('minutes', 'mean') |   ('minutes', 'median') |   ('minutes', 'std') |
 |:-----------------------|----------------------:|------------------------:|---------------------:|----------------------:|------------------------:|---------------------:|
 | 1-2                    |               27.2464 |                      14 |              28.8051 |               60.6933 |                      40 |              76.5207 |
@@ -202,33 +109,14 @@ grouped
 | 3-4                    |               31.0934 |                      20 |              29.7814 |               58.9369 |                      35 |              78.132  |
 | 4-5                    |               28.6202 |                      17 |              29.3303 |               54.5229 |                      35 |              70.8765 |
 
-```python
-rating_bin_edges = [1,2,3,4,5]
-rating_bin_labels = [f'{rating_bin_edges[i]}-{rating_bin_edges[i+1]}' for i in range(len(rating_bin_edges)-1)]
-
-# Bin the average_rating with the defined edges and labels
-recipes_nona['rating_group'] = pd.cut(recipes_nona['average_rating'], bins=rating_bin_edges, labels=rating_bin_labels, include_lowest=True)
 
 
-# Define time bins (assuming 'minutes' is the column with cooking time)
-time_bins = [0, 30, 60, 120, np.inf]
-time_labels = ['0-30', '30-60', '60-120', '120+']
-
-# Bin the minutes into time categories
-recipes_nona['time_category'] = pd.cut(recipes_nona['minutes'], bins=time_bins, labels=time_labels, include_lowest=True)
-
-# Create a pivot table with the binned average_rating and time_category and protein as values
-pivot_table = recipes_nona.pivot_table(index='rating_group', columns='time_category', values='protein', aggfunc='mean')
-
-pivot_table
-
-```
-|    0-30 |   30-60 |   60-120 |    120+ |
-|--------:|--------:|---------:|--------:|
-| 22.6831 | 26.9227 |  32.3457 | 39.287  |
-| 24.2185 | 32.2783 |  33.6454 | 46.0409 |
-| 25.2867 | 33.1707 |  36.7743 | 42.1723 |
-| 22.7715 | 31.8557 |  34.2425 | 39.7874 |
+| rating_group   |    0-30 |   30-60 |   60-120 |    120+ |
+|:---------------|--------:|--------:|---------:|--------:|
+| 1-2            | 22.6831 | 26.9227 |  32.3457 | 39.287  |
+| 2-3            | 24.2185 | 32.2783 |  33.6454 | 46.0409 |
+| 3-4            | 25.2867 | 33.1707 |  36.7743 | 42.1723 |
+| 4-5            | 22.7715 | 31.8557 |  34.2425 | 39.7874 |
 
 ```python
 
