@@ -75,10 +75,12 @@ Here we take a look at the distribution of how many grams of protein is in the r
 
 
 Here we look at two scatter plots to see the relationship between protein and average ratings among the recipes. As well as protein and cooking time.
+
 <iframe src="assets/protein_vs_cooking_time.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/protein_vs_average_rating.html" width=800 height=600 frameBorder=0></iframe>
 
 ### When looking at the scatter plot of Protein vs Average Rating, there isn't much of a relationship between the two variables, but we can see that most recipes have a high average rating and low protein, as most of the dots are clumped into the top left
+
+<iframe src="assets/protein_vs_average_rating.html" width=800 height=600 frameBorder=0></iframe>
 
 ### When looking at the scatter plot of Protein vs Average Rating, there also isn't much of a relationship, but it is clear that most recipes have a shorter cooking time and lower protein.
 
