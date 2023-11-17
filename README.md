@@ -50,13 +50,13 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 ## Here is what our recipes data frame now looks like with no 'NA' values, and some columns have been removed for an easier viewing experience on the important variables.
 
 
-| name                                    |     id |   minutes |   contributor_id | submitted   | tags                                               | nutrition                                      |   n_steps |   n_ingredients |   average_rating |   protein |
-|:----------------------------------------|-------:|----------:|-----------------:|:------------|:---------------------------------------------------|:-----------------------------------------------|----------:|----------------:|-----------------:|----------:|
-| 1 brownies in the world    best ever    | 333281 |        40 |           985201 | 2008-10-27  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0]       |        10 |               9 |                4 |         3 |
-| 1 in canada chocolate chip cookies      | 453467 |        45 |          1848091 | 2011-04-11  | ['60-minutes-or-less', 'time-to-make', 'cuisine',  | [595.1, 46.0, 211.0, 22.0, 13.0, 51.0, 26.0]   |        12 |              11 |                5 |        13 |
-| 412 broccoli casserole                  | 306168 |        40 |            50969 | 2008-05-30  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]      |         6 |               9 |                5 |        22 |
-| millionaire pound cake                  | 286009 |       120 |           461724 | 2008-02-12  | ['time-to-make', 'course', 'cuisine', 'preparation | [878.3, 63.0, 326.0, 13.0, 20.0, 123.0, 39.0]  |         7 |               7 |                5 |        20 |
-| 2000 meatloaf                           | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to-make', 'course', 'main-ingredient', 'pre | [267.0, 30.0, 12.0, 12.0, 29.0, 48.0, 2.0]     |        17 |              13 |                5 |        29 |
+| name                                 |     id |   minutes |   contributor_id | submitted   | nutrition                                     |   average_rating |   protein |
+|:-------------------------------------|-------:|----------:|-----------------:|:------------|:----------------------------------------------|-----------------:|----------:|
+| 1 brownies in the world    best ever | 333281 |        40 |           985201 | 2008-10-27  | [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0]      |                4 |         3 |
+| 1 in canada chocolate chip cookies   | 453467 |        45 |          1848091 | 2011-04-11  | [595.1, 46.0, 211.0, 22.0, 13.0, 51.0, 26.0]  |                5 |        13 |
+| 412 broccoli casserole               | 306168 |        40 |            50969 | 2008-05-30  | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]     |                5 |        22 |
+| millionaire pound cake               | 286009 |       120 |           461724 | 2008-02-12  | [878.3, 63.0, 326.0, 13.0, 20.0, 123.0, 39.0] |                5 |        20 |
+| 2000 meatloaf                        | 475785 |        90 |          2202916 | 2012-03-06  | [267.0, 30.0, 12.0, 12.0, 29.0, 48.0, 2.0]    |                5 |        29 |
 
 # Univariate Analysis
 
