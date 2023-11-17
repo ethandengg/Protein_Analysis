@@ -2,19 +2,6 @@
 
 By: Ethan Deng, Jason Gu
 
-```python
-import pandas as pd
-import numpy as np
-import os
-import ast
-import matplotlib.pyplot as plt
-import seaborn as sns
-from scipy.stats import pearsonr
-""
-import plotly.express as px
-pd.options.plotting.backend = 'plotly'
-```
-
 # Introduction:
 Recently there have been more bodybuilding and strength influencers on the rise, leading to an increase in gym culture and people striving to improve their physique. With this in mind, it's important to eat high-protein foods to build muscle after a hard workout, so in our project, we're curious to find out if recipes that are high in protein are also the ones that people seem to like more. We're also interested in seeing if the time it takes to cook these protein-rich meals affects how much people enjoy them. After all, we all want delicious food that's also good for our muscles, but if it takes too long to make, we might not be that keen on cooking it.
 
