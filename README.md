@@ -48,28 +48,23 @@ The recipe data frame has 83782 rows, meaning that there are 83782 unique recipe
 
 ### 3. We assigned this series of average ratings onto a new column in the recipes data frame.
 
-```python
-merged_df = pd.merge(recipes, reviews, left_on='id', right_on='recipe_id', how='left')
-merged_df['rating'] = merged_df['rating'].replace(0, np.nan)
-
-avg_rating = merged_df.groupby('recipe_id')['rating'].mean()
-recipes['average_rating'] = recipes['id'].map(avg_rating).fillna('NA')
-recipes = recipes.replace("NA", np.nan)
-```
-
 ### 4. We also had to convert the nutrition column from a string into a list. This then makes it possible to extract the grams of protein from that column and add a new column called 'protein' to easily identify how much protein is in each recipe.
 
-```python
-recipes['nutrition'] = recipes['nutrition'].apply(ast.literal_eval)
-recipes['protein'] = recipes['nutrition'].apply(lambda x: x[4])
-```
 
 ### 5. There were some recipes that had no average rating (or an average rating of 0, which are invalid) and some recipes that didn't have a description, so we got rid of those rows and saved it to a new dataframe called recipes_nona to better examine the data that we do have. There were about 2600 rows with NA values, so this didn't impact the size of our data frame that much.
 
-```python
-recipes_nona = recipes.dropna()
-recipes_nona
-```
+| name                                    |     id |   minutes |   contributor_id | submitted   | tags                                               | nutrition                                      |   n_steps | steps                                              | description                                        | ingredients                                        |   n_ingredients |   average_rating |   protein | rating_group   | time_category   |
+|:----------------------------------------|-------:|----------:|-----------------:|:------------|:---------------------------------------------------|:-----------------------------------------------|----------:|:---------------------------------------------------|:---------------------------------------------------|:---------------------------------------------------|----------------:|-----------------:|----------:|:---------------|:----------------|
+| 1 brownies in the world    best ever    | 333281 |        40 |           985201 | 2008-10-27  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0]       |        10 | ['heat the oven to 350f and arrange the rack in th | these are the most; chocolatey, moist, rich, dense | ['bittersweet chocolate', 'unsalted butter', 'eggs |               9 |                4 |         3 | 3-4            | 30-60           |
+| 1 in canada chocolate chip cookies      | 453467 |        45 |          1848091 | 2011-04-11  | ['60-minutes-or-less', 'time-to-make', 'cuisine',  | [595.1, 46.0, 211.0, 22.0, 13.0, 51.0, 26.0]   |        12 | ['pre-heat oven the 350 degrees f', 'in a mixing b | this is the recipe that we use at my school cafete | ['white sugar', 'brown sugar', 'salt', 'margarine' |              11 |                5 |        13 | 4-5            | 30-60           |
+| 412 broccoli casserole                  | 306168 |        40 |            50969 | 2008-05-30  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]      |         6 | ['preheat oven to 350 degrees', 'spray a 2 quart b | since there are already 411 recipes for broccoli c | ['frozen broccoli cuts', 'cream of chicken soup',  |               9 |                5 |        22 | 4-5            | 30-60           |
+| millionaire pound cake                  | 286009 |       120 |           461724 | 2008-02-12  | ['time-to-make', 'course', 'cuisine', 'preparation | [878.3, 63.0, 326.0, 13.0, 20.0, 123.0, 39.0]  |         7 | ['freheat the oven to 300 degrees', 'grease a 10-i | why a millionaire pound cake?  because it's super  | ['butter', 'sugar', 'eggs', 'all-purpose flour', ' |               7 |                5 |        20 | 4-5            | 60-120          |
+| 2000 meatloaf                           | 475785 |        90 |          2202916 | 2012-03-06  | ['time-to-make', 'course', 'main-ingredient', 'pre | [267.0, 30.0, 12.0, 12.0, 29.0, 48.0, 2.0]     |        17 | ['pan fry bacon , and set aside on a paper towel t | ready, set, cook! special edition contest entry: a | ['meatloaf mixture', 'unsmoked bacon', 'goat chees |              13 |                5 |        29 | 4-5            | 60-120          |
+| 5 tacos                                 | 500166 |        20 |          2549237 | 2013-05-13  | ['weeknight', '30-minutes-or-less', 'time-to-make' | [249.4, 26.0, 4.0, 6.0, 39.0, 39.0, 0.0]       |         5 | ['cook meat', 'add taco seasoning', 'place meat in | costs about $5.00 to make.                         | ['ground beef', 'taco seasoning', 'taco shells', ' |               9 |                4 |        39 | 3-4            | 0-30            |
+| 50 chili   for the crockpot             | 501028 |       345 |          2628680 | 2013-05-28  | ['course', 'main-ingredient', 'cuisine', 'preparat | [270.2, 19.0, 26.0, 48.0, 52.0, 21.0, 4.0]     |         4 | ['combine all ingredients in a 7-quart crockpot',  | first, thank you to *parsley* - chef # 199848 - fo | ['stewing beef', 'stewing pork', 'white onion', 'b |              22 |                5 |        52 | 4-5            | 120+            |
+| blepandekager   danish   apple pancakes | 503475 |        50 |           128473 | 2013-07-08  | ['danish', '60-minutes-or-less', 'time-to-make', ' | [358.2, 30.0, 62.0, 14.0, 19.0, 54.0, 12.0]    |        10 | ['beat the eggs lightly and add the milk', 'combin | this recipe has been posted here for play in zwt9  | ['eggs', 'milk', 'flour', 'sugar', 'salt', 'cream' |              10 |                5 |        19 | 4-5            | 30-60           |
+| lplermagrone                            | 522861 |        50 |           135470 | 2015-07-25  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [1003.8, 72.0, 21.0, 103.0, 69.0, 143.0, 37.0] |        10 | ['a variant on the theme: in the swiss canton of n | älplermagronethe name doesn't translate perfectly  | ['milk', 'salt', 'macaroni', 'cheese', 'fresh coar |               8 |                5 |        69 | 4-5            | 30-60           |
+| lplermagrone  herdsman s macaroni       | 457136 |        40 |            65502 | 2011-05-23  | ['60-minutes-or-less', 'time-to-make', 'course', ' | [708.6, 52.0, 19.0, 24.0, 46.0, 104.0, 25.0]   |        14 | ['heat the oven to 100 c', 'boil potatoes in a sau | basic ingredients for swiss alpine macaroni includ | ['potato', 'salt water', 'macaroni', 'heavy cream' |              10 |                5 |        46 | 4-5            | 30-60           |
 
 # Univariate Analysis
 
