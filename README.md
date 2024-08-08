@@ -3,7 +3,7 @@
 **Authors**: [Ethan Deng](https://github.com/ethandengg), [Jason Gu](https://github.com/jingchenggu)
 
 ## Project Overview
-This is a data science project on investigating if there is a coorelation between the protein content and average rating and if there is a coorelation between the protein content and cooking time of the recipe. The dataset used to investigate the topic can be find [here](https://dsc80.com/project3/recipes-and-ratings/food.com), and is originally scrapped from [this source](https://cseweb.ucsd.edu/~jmcauley/pdfs/emnlp19c.pdf).
+This is a data science project on investigating if there is a coorelation between the protein content and average rating and if there is a coorelation between the protein content and cooking time of the recipe. The dataset used to investigate the topic can be found [here](https://dsc80.com/project3/recipes-and-ratings/food.com), and is originally scrapped from [this source](https://cseweb.ucsd.edu/~jmcauley/pdfs/emnlp19c.pdf).
 
 # Table of Contents
 - [Introduction](#introduction)
